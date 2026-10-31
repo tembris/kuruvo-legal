@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuruvo Gizlilik Politikası ve KVKK Aydınlatma Metni</title>
+<style>
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;max-width:56rem;margin:0 auto;padding:1rem 1.25rem 3rem;color:#1a1a1a;background:#fff}
+nav{font-size:.9rem;margin-bottom:1.5rem}
+h1{font-size:1.8rem}h2{font-size:1.25rem;margin-top:2rem}
+table{border-collapse:collapse;width:100%;font-size:.9rem;display:block;overflow-x:auto}
+th,td{border:1px solid #ccc;padding:.4rem .6rem;text-align:left;vertical-align:top}
+th{background:#f2f2f2}
+code{background:#f2f2f2;padding:0 .2rem}
+a{color:#0b5cad}
+@media (prefers-color-scheme:dark){body{background:#121212;color:#e6e6e6}th{background:#222}th,td{border-color:#444}code{background:#222}a{color:#7db7ff}}
+</style>
+</head>
+<body>
+<nav><a href="index.html">Ana sayfa</a> | <a href="privacy.html">Privacy Policy (English)</a> | <a href="privacy-tr.html">Gizlilik Politikası</a> | <a href="terms.html">Terms of Use (English)</a></nav>
+
+<h1>Kuruvo Gizlilik Politikası ve KVKK Aydınlatma Metni</h1>
+<p><strong>Yürürlük tarihi:</strong> 31 Ekim 2026</p>
+<p>Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ'in 4. ve 5. maddeleri kapsamındaki aydınlatma yükümlülüğünü, ayrıca (AB/Birleşik Krallık kullanıcıları için) GDPR 13. madde bilgilendirmesini karşılamayı amaçlar. <strong>Bu bir aydınlatma metnidir; açık rıza metni değildir.</strong> Sizden bu metin üzerinden açık rıza istemiyoruz (bölüm 5).</p>
+
+<h2>1. Veri sorumlusu</h2>
+<p>Kuruvo ("uygulama"), Android için bir gider takip uygulamasıdır. Bu metinde anlatılan kişisel verilerin sorumlusu (KVKK anlamında "veri sorumlusu"):</p>
+<p><strong>Oğulcan Özkan</strong>, bireysel geliştirici ("biz")<br>İletişim: <strong>tembrisstudio@gmail.com</strong></p>
+<p>Temsilci atanmamıştır.</p>
+
+<h2>2. Özet</h2>
+<ul>
+<li>Kuruvo'da <strong>hesap, üyelik ve bulut senkronizasyonu yoktur</strong>. Giderleriniz, kategorileriniz, bütçeleriniz, fişleriniz ve ayarlarınız <strong>yalnızca cihazınızda</strong>, şifreli bir veritabanında saklanır. Bunları göremeyiz.</li>
+<li>Uygulamada <strong>analiz (analytics), reklam, çökme raporlama ve reklam kimliği yoktur</strong>; sizi izlemeyiz.</li>
+<li><strong>Ödemeler</strong> Google Play üzerinden <strong>Google'a</strong> yapılır. Satın alma sizinle Google arasındadır. Uygulama, aboneliğinizin geçerli olup olmadığını telefonunuzda kontrol eder. Bir ödeme veya abonelik sunucusu işletmiyoruz.</li>
+<li>Her kurulumun aldığı <strong>7 günlük ücretsiz deneme yalnızca telefonunuzda</strong> sayılır: başladığı tarih cihazda saklanır ve bize veya bir başkasına gönderilmez.</li>
+<li><strong>Döviz kurları</strong> <strong>Frankfurter</strong> servisinden indirilir ve yalnızca ilk ekrandaki gizlilik bildirimini gördükten sonra. İstek, servise IP adresinizi ve varsayılan para biriminizi gösterir.</li>
+<li><strong>Fiş tarama varsayılan olarak kapalıdır.</strong> Açarsanız metin tanıma telefonunuzda <strong>Google ML Kit</strong> ile çalışır. Fotoğrafınız ve okunan metin yüklenmez; ancak ML Kit, tarama açıkken kapatılamayan teknik ölçümleri Google'a gönderir (bölüm 4).</li>
+<li>Hatırlatma ve uyarılar telefonunuzun ürettiği <strong>yerel bildirimlerdir</strong>. Anlık bildirim (push) servisi kullanılmaz.</li>
+</ul>
+
+<h2>3. Uygulamanın cihazınızda işlediği veriler</h2>
+<table>
+<tr><th>Veri</th><th>Nerede saklanır</th><th>Cihazdan çıkar mı?</th></tr>
+<tr><td>Giderler: tutar, para birimi, tarih, kategori, işyeri, not, giriş yöntemi (elle / tarama / tekrarlayan)</td><td>Uygulamanın özel alanındaki şifreli SQLite veritabanı (SQLCipher). Rastgele veritabanı anahtarı, expo-secure-store aracılığıyla Android Keystore'da tutulur</td><td>Hayır</td></tr>
+<tr><td>Kategoriler, bütçeler, tekrarlayan giderler, takip ettiğiniz abonelik listesi</td><td>Aynı şifreli veritabanı</td><td>Hayır</td></tr>
+<tr><td>Ayarlar ve uygulama durumu: varsayılan para birimi, dil, tema, ilk kurulum durumu, seri sayacı, kapatılan içgörü kartları, bildirim tercihleri, gizlilik bildirimini gördüğünüz, fiş taramanın açık olup olmadığı</td><td>Cihazınızdaki şifreli veritabanı / uygulama depolaması</td><td>Hayır</td></tr>
+<tr><td>Önbelleğe alınmış döviz kurları ve son güncelleme zamanı</td><td>Şifreli veritabanı</td><td>Hayır</td></tr>
+<tr><td>Tarama için çektiğiniz veya seçtiğiniz fiş fotoğrafı</td><td>Fotoğraf seçici uygulamanın önbelleğine geçici bir kopya koyar; uygulama bu kopyayı metin tanımanın hemen ardından siler ve kopya saklamaz. Galeriden seçtiğiniz fotoğraf olduğu yerde kalır</td><td>Hayır (ML Kit ölçümleri için bölüm 4)</td></tr>
+<tr><td>Fişten okunan metin (tutar, tarih, işyeri)</td><td>Onaylamanız için gider formunda gösterilir; yalnızca gideri kaydederseniz saklanır</td><td>Hayır</td></tr>
+<tr><td>Uygulama kilidi PIN'i ve başarısız deneme sayacı</td><td>expo-secure-store üzerinden Android Keystore</td><td>Hayır</td></tr>
+<tr><td>Parmak izi / yüz verisi (biyometrik kilidi açarsanız)</td><td>Uygulama bu verilere hiç erişmez. İşletim sistemi doğrular ve uygulamaya yalnızca "başarılı" veya "başarısız" bildirir</td><td>Hayır</td></tr>
+<tr><td>Zamanlanmış yerel bildirimler (bütçe uyarıları, hatırlatmalar, ücretsiz deneme bitiş hatırlatmaları)</td><td>Cihazınız tarafından zamanlanır. Push belirteci istenmez</td><td>Hayır</td></tr>
+<tr><td>Bu cihazdaki ücretsiz deneme durumu: 7 günlük denemenin başladığı tarih ve cihaz saatinin geri alınmasını fark etmek için en yüksek saat değeri</td><td>expo-secure-store (Android Keystore). "Tüm verileri sil" bunu silmez (veri silinerek deneme yeniden başlatılamasın diye); uygulamayı kaldırmak siler</td><td>Hayır. Uygulama yalnızca okur</td></tr>
+<tr><td>Bu cihazdaki abonelik durumu: durum, dönem tarihleri, son kontrol zamanı, Google Play'in uygulamaya verdiği satın alma belirteci</td><td>expo-secure-store (Android Keystore). "Tüm verileri sil" bunu silmez (ödeme yapan abone dışarıda kalmasın diye); uygulamayı kaldırmak siler</td><td>Hayır. Uygulama yalnızca okur</td></tr>
+<tr><td>Root sinyali: cihazın root'lu görünüp görünmediği. Görünüyorsa çevrimdışı tolerans süresi kısalır (Kullanım Koşulları'na bakın). Sonuç saklanmaz ve gönderilmez</td><td>Cihazda hesaplanır</td><td>Hayır</td></tr>
+<tr><td>Dışa aktardığınız yedekler (JSON, CSV)</td><td>Android paylaşım menüsüyle sizin oluşturup gönderdiğiniz dosya</td><td>Yalnızca <strong>sizin</strong> gönderdiğiniz yere</td></tr>
+</table>
+<p>Android'in otomatik uygulama yedeği Kuruvo için kapatılmıştır; veritabanı Google hesap yedeğinize kopyalanmaz.</p>
+
+<h2>4. Cihazdan çıkan veriler, alıcılar ve aktarım amaçları</h2>
+<p>Her alıcı grubu ve aktarım amacı aşağıda belirtilmiştir (Tebliğ m. 4/c ve m. 5/1-ı).</p>
+<table>
+<tr><th>Alıcı</th><th>Ülke</th><th>Ne gönderilir</th><th>Ne zaman ve neden</th><th>Rolü</th><th>Daha fazla bilgi</th></tr>
+<tr><td><strong>Google</strong> (Google Play ve Google Play Faturalandırma)</td><td>Dünya geneli (Google)</td><td>Abone olurken <strong>sizin</strong> Google'a verdiğiniz ödeme, sipariş ve Google hesabı verileri. Kart veya ödeme bilgilerinizi uygulama hiç görmez. Uygulama yalnızca <strong>telefonunuzdaki</strong> Play Store uygulamasına hesabınızın hangi satın alımlara sahip olduğunu sorar ve yanıttaki Google imzasını doğrular</td><td>Abone olduğunuzda, geri yüklediğinizde veya uygulama aboneliğinizi kontrol ettiğinde. Aboneliğin, yenilemelerin, iptallerin ve iadelerin işlenmesi için. Ücretsiz deneme Google tarafından işlenmez</td><td>Google'ın kendi koşullarına tabi bağımsız veri sorumlusu; bizim veri işleyenimiz değildir</td><td><a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>, <a href="https://play.google.com/about/play-terms/">Google Play Şartları</a></td></tr>
+<tr><td><strong>Frankfurter</strong> (açık kaynaklı döviz kuru servisi, sunucu <code>api.frankfurter.dev</code>; Cloudflare arkasında çalışır)</td><td>Proje ve bir içerik dağıtım sağlayıcısı tarafından barındırılır; konum belirtilmemiştir</td><td>Adresinde <strong>varsayılan para biriminizi</strong> (temel olarak) ve diğer para birimi kodlarının listesini içeren HTTPS isteği, örn. <code>base=USD&amp;symbols=EUR,GBP,...</code>. Her internet isteği gibi <strong>IP adresinizi</strong> sunucuya gösterir. Gider, hesap veya başka kişisel veri içermez</td><td><strong>Yalnızca ilk ekrandaki gizlilik bildirimini gördükten sonra.</strong> Sonra: uygulama açıldığında kayıtlı kurlar 24 saatten eskiyse otomatik; varsayılan para birimini değiştirdiğinizde; "kurları güncelle"ye bastığınızda (en fazla 15 dakikada bir). Tutarları para birimleri arasında çevirmek için; uygulama son kayıtlı kurlarla çevrimdışı çalışır</td><td>Bağımsız servis; onunla sözleşmemiz yoktur. Kamuya açık SSS'sine göre kişisel veri, IP adresi veya istek adresi toplamaz ve kaydetmez</td><td><a href="https://frankfurter.dev">frankfurter.dev</a></td></tr>
+<tr><td><strong>Google ML Kit</strong> (metin tanıma, <code>@react-native-ml-kit/text-recognition</code>)</td><td>Dünya geneli (Google)</td><td><strong>Yalnızca fiş taramayı açarsanız.</strong> Tanıma, uygulamaya gömülü bir modelle telefonunuzda yapılır: görselleriniz ve okunan metin Google'a <strong>gönderilmez</strong>. Google'a göre ML Kit, HTTPS üzerinden Google'a teknik ölçümler gönderir: cihaz üreticisi, modeli ve işletim sistemi sürümü, uygulama paket adı ve sürümü, gecikme gibi performans ölçümleri, API yapılandırması, girdi ve çıktı boyutu, olay türleri, hata kodları ve kuruluma özgü bir kimlik. <strong>Bu ölçümler tarama açıkken kapatılamaz</strong>; Ayarlar'dan taramayı kapatmak, uygulamanın ML Kit'i çağırmasını durdurur</td><td>Fiş taramayı kullandığınızda. Google, ölçümleri ML Kit API'lerini ölçmek, hata ayıklamak, sürdürmek, geliştirmek ve kötüye kullanımı tespit etmek için kullanır</td><td>Amacı Google belirler. Bu ölçümler için Google ile veri işleme sözleşmemiz yoktur ve bunlar için bir yurt dışı aktarım aracı iddia etmiyoruz (bölüm 6). Google bu ölçümleri üçüncü kişilere aktarmadığını belirtir</td><td><a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit veri açıklaması</a>, <a href="https://developers.google.com/ml-kit/terms">ML Kit koşulları</a></td></tr>
+<tr><td><strong>GitHub Pages</strong> (bu politikayı ve Kullanım Koşulları'nı barındırır)</td><td>Amerika Birleşik Devletleri (GitHub, Inc.)</td><td>Politika veya Koşullar bağlantısını açtığınızda tarayıcınız sayfayı ister; bu, GitHub'a IP adresinizi ve tarayıcı bilgilerinizi gösterir. Uygulamanın kendisi hiçbir şey göndermez</td><td>Yalnızca bir yasal bağlantıya dokunduğunuzda</td><td>Bağımsız servis</td><td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Gizlilik Beyanı</a></td></tr>
+<tr><td><strong>E-posta sağlayıcımız</strong> (Google LLC, Gmail)</td><td>Amerika Birleşik Devletleri</td><td>Bize yazdığınız mesaj, e-posta adresiniz ve mesajın içindekiler</td><td>Yalnızca <strong>tembrisstudio@gmail.com</strong> adresine yazarsanız. Size yanıt vermek için</td><td>Bizim için hizmet sağlayıcı. Sağlayıcı yurt dışındaysa posta sağlayıcısı için bir aktarım aracı iddia etmiyoruz (bölüm 6)</td><td>Sağlayıcının gizlilik politikası</td></tr>
+</table>
+<p>Geliştirici olarak bize ulaşan veri: <strong>Google Play Console</strong> bize siparişlere ilişkin veri gösterir; örneğin sipariş numarası, ürün, siparişin zamanı ve durumu, fiyat ve vergi, alıcının ülkesi. Play Console alıcıya ilişkin e-posta adresi gibi başka bilgiler de gösterebilir. Bu veriyi bize uygulama değil Google sağlar. Uygulama bize hiçbir şey göndermez.</p>
+<p>Verilerinizi <strong>satmayız</strong>, reklam amacıyla <strong>paylaşmayız</strong>; reklam, analiz veya çökme raporlama SDK'sı <strong>kullanmayız</strong>. Uygulama bağlantınızı sınamak için internete yoklama isteği göndermez; yalnızca Android'in bildirdiği bağlantı durumunu okur. Dışa aktardığınız yedeği bir yere gönderirseniz (örn. bulut depolama veya e-posta uygulaması), o alıcı kendi koşullarına göre işler; buna erişimimiz yoktur.</p>
+
+<h2>5. İşleme amaçları ve hukuki sebepler</h2>
+<p>Her amaç için KVKK m. 5/2 kapsamındaki hukuki sebep belirtilmiştir (Tebliğ m. 4/ç ve m. 5/1-h).</p>
+<table>
+<tr><th>Amaç</th><th>Veri</th><th>KVKK m. 5/2 hukuki sebebi</th><th>GDPR m. 6</th></tr>
+<tr><td>Temel işlevler (takip, bütçe, tarama, içgörüler)</td><td>Bölüm 3'teki veriler</td><td>Tarafımızca işlenmez: cihazınızda kalır, bize ulaşmaz</td><td>Uygulanmaz</td></tr>
+<tr><td>Ücretsiz denemenizi, aboneliğinizi ve salt okunur modu cihazınızda kontrol etmek, geri yüklemek, uygulamak</td><td>Deneme başlangıç tarihi ve saat kaydı (cihazda kalır); Play Store'un telefonunuzda uygulamaya verdiği satın alma durumu</td><td>Sözleşmenin kurulması veya ifasıyla doğrudan ilgili olması (m. 5/2-c). Bu kontrollerden bize veri gelmez</td><td>m. 6(1)(b)</td></tr>
+<tr><td>Tahsil ettiğimiz abonelikleri yönetmek: sipariş kayıtları, destek, ters ibraz ve kötüye kullanım</td><td>Play Console'daki sipariş verisi</td><td>Sözleşmenin ifası (m. 5/2-c); bir hakkın tesisi, kullanılması veya korunması (m. 5/2-e); meşru menfaat (m. 5/2-f)</td><td>m. 6(1)(b), (f)</td></tr>
+<tr><td>Satışlara ilişkin vergi ve muhasebe kayıtlarını tutmak</td><td>Sipariş verisi</td><td>Hukuki yükümlülük (m. 5/2-ç)</td><td>m. 6(1)(c)</td></tr>
+<tr><td>Para birimi çevirme</td><td>Kur isteği, IP adresi (Frankfurter)</td><td>Sözleşmenin ifası (m. 5/2-c): kullandığınız özellik kurlara ihtiyaç duyar</td><td>m. 6(1)(b)</td></tr>
+<tr><td>Google bileşeninin gönderdiği ölçümlerle fiş tarama</td><td>Bölüm 4'teki ölçümler</td><td>Meşru menfaat (m. 5/2-f): özelliği, yalnızca sizin bilgilendirildikten sonra kendi tercihinizle açmanıza bağlı olarak sunmak. <strong>Bu tercih KVKK anlamında açık rıza değildir ve yurt dışı aktarımın dayanağı olarak kullanılmaz</strong></td><td>m. 6(1)(a): bilgi ekranının ardından taramayı açma tercihinizi rıza olarak değerlendiriyoruz; taramayı kapatarak geri alırsınız</td></tr>
+<tr><td>Mesajlarınızı ve taleplerinizi yanıtlamak; Kanun m. 11 başvurularını sonuçlandırmak</td><td>E-postanız, mesajınız</td><td>Hukuki yükümlülük (m. 5/2-ç, Kanun m. 13); meşru menfaat (m. 5/2-f)</td><td>m. 6(1)(f), (b)</td></tr>
+</table>
+<p><strong>Açık rıza.</strong> Hiçbir işleme için KVKK anlamında açık rızanızı istemiyoruz; hiçbiri açık rızaya dayanmıyor. Fiş taramayı açmadan önce gösterilen bilgi ekranı sizi bilgilendirir ve özelliği açar; açık rıza metni olarak sunulmaz. Yerel bildirimler cihazınızın bildirim iznini kullanır; bu izni Android ayarlarından dilediğiniz zaman geri alabilirsiniz.</p>
+<p><strong>Kişisel verilerin toplanma yöntemi (Tebliğ m. 4/ç ve m. 5/1-i):</strong> Veriler <strong>otomatik yollarla</strong> toplanır: Play Console sipariş verisi Google tarafından sağlanır; döviz kuru isteği ve (tarama açıksa) ML Kit ölçümleri uygulama tarafından otomatik gönderilir. E-posta ile bize yazarsanız veriler sizden doğrudan toplanır. Cihazınızdaki veriler (deneme başlangıç tarihi dahil) bize ulaşmaz.</p>
+<p>Bize hiçbir veri vermek zorunda değilsiniz. Fiş taramayı açmazsanız ML Kit çağrılmaz. Uygulama, gizlilik bildiriminden sonra kurları kendiliğinden ister; bu sürümde bunun için bir anahtar yoktur, ancak kurları elle girebilir ve uygulamayı son kayıtlı kurlarla çevrimdışı kullanabilirsiniz.</p>
+<p><strong>Otomatik karar.</strong> Salt okunur mod, deneme ve abonelik durumunu mekanik biçimde izler (deneme, cihazda saklanan saate göre 7 gün sonra biter). Profil çıkarılmaz ve sizin hakkınızda hukuki sonuç doğuran bir karar verilmez.</p>
+
+<h2>6. Yurt dışına aktarım</h2>
+<p>Google dünya genelinde faaliyet gösterir. Frankfurter ile içerik dağıtım sağlayıcısı ve GitHub, verileri Türkiye'nin, AEA'nın veya Birleşik Krallık'ın dışında işleyebilir. Bu nedenle IP adresiniz ve (tarama açıksa) ML Kit ölçümleri yurt dışına ulaşır.</p>
+<p><strong>Açıkça belirtiyoruz:</strong> 6698 sayılı Kanun'un 9. maddesi (7499 sayılı Kanun'la değişik) uyarınca yurt dışına aktarım için yeterlilik kararı, uygun güvenceler (standart sözleşme, bağlayıcı şirket kuralları, taahhütname) veya arızi aktarım şartlarından biri gerekir. Kişisel Verileri Koruma Kurulu'nun, 29 Ekim 2026 itibarıyla ilan ettiği bir yeterlilik kararı yoktur. <strong>Google ML Kit ölçümleri, döviz kuru isteği, GitHub Pages ve e-posta sağlayıcısı için Kanun m. 9 kapsamında bir aktarım aracı (yeterlilik kararı, standart sözleşme, bağlayıcı şirket kuralları, taahhütname veya başka bir şart) iddia etmiyoruz.</strong> Bu sağlayıcılarla standart sözleşme imzalamadık. Bunun yerine akışları azalttık: ML Kit yalnızca siz fiş taramayı açtıktan sonra çağrılır; döviz kuru isteği gider verisi taşımaz; uygulamada reklam, analiz ve çökme raporlama yoktur. Taramayı açma tercihiniz, Türk hukuku bakımından bu aktarımların hukuki dayanağı olarak kullanılmaz. Ayrıntı için <strong>tembrisstudio@gmail.com</strong> adresine yazabilirsiniz. AB/Birleşik Krallık kullanıcıları için sağlayıcıların kendi güvenceleri kendi politikalarında anlatılır (bölüm 4'teki bağlantılar).</p>
+
+<h2>7. Saklama süresi</h2>
+<ul>
+<li><strong>Cihazınızdaki veriler:</strong> Uygulamada silene, uygulamanın depolamasını temizleyene veya uygulamayı kaldırana kadar. Bize hiç ulaşmadığı için geri getiremeyiz. Fiş fotoğrafının geçici kopyası metin tanımanın hemen ardından silinir. Ayarlar'daki "Tüm verileri sil" veritabanı içeriğini, ayarları, PIN'i, zamanlanmış bildirimleri ve geçici dışa/içe aktarma dosyalarını siler; uygulama ayrıca açılışta kalan geçici dosyaları temizler.</li>
+<li><strong>Cihazdaki ücretsiz deneme durumu (başlangıç tarihi, saat kaydı):</strong> Uygulamayı kaldırana kadar. "Tüm verileri sil" bunu silmez (bölüm 3); böylece veri silinerek deneme yeniden başlatılamaz.</li>
+<li><strong>Cihazdaki abonelik durumu:</strong> Her kontrolde yenilenir. "Tüm verileri sil" bunu silmez (bölüm 3); uygulamayı kaldırmak siler.</li>
+<li><strong>Google (Play, Play Faturalandırma, ML Kit):</strong> Google'ın kendi politikalarına göre.</li>
+<li><strong>Frankfurter ve içerik dağıtım sağlayıcısı:</strong> Bu istekten hiçbir veri almayız ve saklamayız. Sağlayıcının teknik kayıtları ne kadar tuttuğunu kendisi belirtmemiştir.</li>
+<li><strong>Play Console'da gördüğümüz sipariş verisi:</strong> Google kendi politikalarına göre saklar. Hesaplarımız için tuttuğumuz kopya, vergi ve muhasebe mevzuatının gerektirdiği süre kadar saklanır.</li>
+<li><strong>Bize gönderdiğiniz e-postalar:</strong> Talebiniz sonuçlanana kadar ve sonrasında 12 ay; ardından silinir. Taleplere yanıt verdiğimizi göstermek için kısa bir talep kaydı (tarih, talep türü, sonuç; mesaj içeriği olmadan) 3 yıl tutulur.</li>
+</ul>
+
+<h2>8. Verilerinizi silme</h2>
+<ul>
+<li><strong>Uygulamadaki veriler:</strong> Uygulamada giderleri, kategorileri ve bütçeleri silebilir, <strong>Ayarlar &gt; Tüm verileri sil</strong>'i kullanabilir veya uygulamayı kaldırabilirsiniz. Kaldırma, uygulamanın cihazda sakladığı her şeyi siler; "Tüm verileri sil" oluşturduğunuz her şeyi siler, yalnızca deneme ve abonelik durumu kayıtlarını bırakır. Dışa aktardığınız dosyalara erişimimiz yoktur; kendiniz silin.</li>
+<li><strong>Google verileri (Play, ML Kit):</strong> Google hesabınız veya Google'ın gizlilik araçları üzerinden yönetin. ML Kit ölçümlerini durdurmak için Ayarlar'dan fiş taramayı kapatın.</li>
+<li><strong>Elimizdeki sipariş verisi:</strong> <strong>tembrisstudio@gmail.com</strong> adresine "Gizlilik talebi" konusuyla yazın. Siparişinizi bulabilmemiz için lütfen makbuz e-postanızdaki Google Play sipariş numarasını ekleyin. Kayıtların silinmesi aboneliğinizi <strong>iptal etmez</strong>; Google Play'den iptal edin (Kullanım Koşulları'na bakın). Bazı sipariş verilerini vergi ve muhasebe mevzuatı gereği saklamak zorundayız.</li>
+<li><strong>Kur servisi ve GitHub:</strong> Bu isteklerden elimizde veri yoktur; doğrudan onlarla iletişime geçin.</li>
+</ul>
+
+<h2>9. Haklarınız (KVKK m. 11 ve GDPR m. 15–22)</h2>
+<p>KVKK'nın 11. maddesi uyarınca veri sorumlusuna başvurarak şunları talep edebilirsiniz: kişisel verilerinizin işlenip işlenmediğini öğrenme; işlenmişse buna ilişkin bilgi talep etme; işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme; yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme; eksik veya yanlış işlenmişse düzeltilmesini isteme; KVKK m. 7 çerçevesinde silinmesini veya yok edilmesini isteme ve bunun aktarıldığı üçüncü kişilere bildirilmesini isteme; işlenen verilerin münhasıran otomatik sistemlerle analiz edilmesi sonucu aleyhinize bir sonuç doğmasına itiraz etme; kanuna aykırı işleme nedeniyle zarara uğramanız hâlinde zararın giderilmesini talep etme. AB/Birleşik Krallık'taysanız ayrıca GDPR kapsamında erişim, düzeltme, silme, işlemeyi kısıtlama, itiraz ve veri taşınabilirliği haklarına sahipsiniz. Uygulamadaki tüm verilerinizi JSON yedeği olarak kendiniz dışa aktarabilirsiniz; bu, salt okunur modda da çalışır.</p>
+<p><strong>Başvuru yöntemi:</strong> Talebinizi, kimliğinizi tespit edecek bilgilerle ve talep ettiğiniz hakkı açıkça belirterek <strong>tembrisstudio@gmail.com</strong> adresine e-posta ile iletin. Gerekirse kimliğinizi doğrulamak için ek bilgi isteyebiliriz. "Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ"deki diğer yöntemleri de (yazılı başvuru, KEP, güvenli elektronik imza) kullanabilirsiniz. Talebinizi niteliğine göre en geç otuz gün içinde ücretsiz sonuçlandırırız. Uygulamadaki verilerin çoğu bize ulaşmadığından bu haklarınızı çoğunlukla doğrudan uygulamada kullanabilirsiniz. Başvurunuza verilen yanıtı yetersiz bulursanız veya süresinde yanıt alamazsanız Kişisel Verileri Koruma Kurulu'na şikâyet hakkınız saklıdır (AB'de ulusal denetim otoritenize).</p>
+<p><strong>Kaliforniya:</strong> CCPA/CPRA anlamında kişisel bilgileri satmayız veya paylaşmayız ve hedefli reklam için kullanmayız.</p>
+
+<h2>10. Çocuklar</h2>
+<p>Kuruvo 18 yaş ve üzeri yetişkinler içindir, çocuklara yönelik değildir ve bilerek çocuklara ait veri toplamayız. Bir çocuğun bize veri verdiğini düşünüyorsanız <strong>tembrisstudio@gmail.com</strong> adresine yazın; silelim.</p>
+
+<h2>11. Güvenlik</h2>
+<p>Verileriniz uygulamanın özel alanında şifreli bir veritabanında tutulur. Veritabanı anahtarı rastgeledir, cihazınızda üretilir ve Android Keystore'da saklanır. Android'in uygulama yalıtımı, uygulamanın depolamasını diğer uygulamalardan korur. İsteğe bağlı uygulama kilidi ekranlara erişimi korur; kilit açıkken Android'e ekran görüntüsünü ve ekran kaydını engellemesi ve son uygulamalar listesindeki önizlemeyi boş göstermesi söylenir. Bildirimlerin içeriği kilitli ekranda gizlenir. Ağ istekleri HTTPS kullanır. Uygulama, premium vermeden önce her satın almanın Google imzasını doğrular. Hiçbir sistem tamamen güvenli değildir; cihazınızı ve oluşturduğunuz yedek dosyalarını korumak sizin sorumluluğunuzdadır.</p>
+<p>Elimizdeki verilere ilişkin bir kişisel veri ihlalini öğrenirsek, Kanun'un gerektirdiği şekilde Kurul'a ve size bildiririz (KVKK m. 12/5).</p>
+
+<h2>12. Uygulamanın isteyebileceği izinler</h2>
+<ul>
+<li><strong>Kamera:</strong> yalnızca fiş taramayı seçtiğinizde ve taramayı açtığınızda. Fotoğraflar cihazınızda okunur, yüklenmez. Galeriden fotoğraf seçmek sistemin fotoğraf seçicisini kullanır ve depolama izni gerektirmez.</li>
+<li><strong>Bildirimler:</strong> yalnızca etkinleştirdiğiniz yerel hatırlatma ve uyarılar için.</li>
+<li><strong>Biyometri / cihaz kilidi:</strong> yalnızca isteğe bağlı uygulama kilidi için.</li>
+<li><strong>İnternet:</strong> döviz kuru isteği ve Google Play için.</li>
+<li><strong>Açılışta çalışma ve titreşim:</strong> yeniden başlatmanın ardından hatırlatmalarınızı yeniden zamanlamak ve dokunsal geri bildirim vermek için.</li>
+<li>Uygulama mikrofonunuza, konumunuza, kişilerinize, dosyalarınıza veya reklam kimliğinize erişim istemez.</li>
+</ul>
+
+<h2>13. Değişiklikler</h2>
+<p>Bu politikayı güncelleyebiliriz. Güncel sürüm yukarıdaki yürürlük tarihiyle belirtilir ve her zaman bu metni okuduğunuz adreste yayımlanır. Verilerinizin yeni bir alıcısını ekleyen sürümden önce bölüm 4'ü güncelleriz.</p>
+
+<h2>14. İletişim</h2>
+<p><strong>Oğulcan Özkan</strong> · <strong>tembrisstudio@gmail.com</strong></p>
+</body>
+</html>

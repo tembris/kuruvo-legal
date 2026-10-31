@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuruvo Privacy Policy</title>
+<style>
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;max-width:56rem;margin:0 auto;padding:1rem 1.25rem 3rem;color:#1a1a1a;background:#fff}
+nav{font-size:.9rem;margin-bottom:1.5rem}
+h1{font-size:1.8rem}h2{font-size:1.25rem;margin-top:2rem}
+table{border-collapse:collapse;width:100%;font-size:.9rem;display:block;overflow-x:auto}
+th,td{border:1px solid #ccc;padding:.4rem .6rem;text-align:left;vertical-align:top}
+th{background:#f2f2f2}
+code{background:#f2f2f2;padding:0 .2rem}
+a{color:#0b5cad}
+@media (prefers-color-scheme:dark){body{background:#121212;color:#e6e6e6}th{background:#222}th,td{border-color:#444}code{background:#222}a{color:#7db7ff}}
+</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a> | <a href="privacy.html">Privacy Policy</a> | <a href="privacy-tr.html">Gizlilik Politikası (Türkçe)</a> | <a href="terms.html">Terms of Use</a></nav>
+
+<h1>Kuruvo Privacy Policy</h1>
+<p><strong>Effective date:</strong> 31 October 2026</p>
+
+<h2>1. Who we are</h2>
+<p>Kuruvo ("the app") is an expense-tracking app for Android. The person responsible for the data described in this policy (the "controller") is:</p>
+<p><strong>Oğulcan Özkan</strong>, an individual developer ("we", "us")<br>Contact: <strong>tembrisstudio@gmail.com</strong></p>
+<p>We have not appointed a data protection officer. This policy gives you the information that Article 13 of the EU/UK GDPR requires. The Turkish version of this policy is also the notice required by Article 10 of the Turkish Personal Data Protection Law (KVKK).</p>
+
+<h2>2. Summary</h2>
+<ul>
+<li>Kuruvo has <strong>no account, no sign-up and no cloud sync</strong>. Your expenses, categories, budgets, receipts and settings are stored <strong>only on your device</strong>, in an encrypted database. We cannot see them.</li>
+<li>We run <strong>no analytics, no advertising, no crash reporting and no advertising ID</strong> in the app, and we do not track you.</li>
+<li><strong>Payments</strong> are made to <strong>Google</strong> through Google Play. The purchase is between you and Google. The app checks on your phone that your own subscription is valid. We do not run a payment or subscription server.</li>
+<li>The <strong>7-day free trial</strong> that every installation gets is counted <strong>on your phone only</strong>: the date it started is stored on the device and is never sent to us or anyone else.</li>
+<li><strong>Exchange rates</strong> are downloaded from <strong>Frankfurter</strong>, and only after you have seen the privacy notice on the first screen. The request shows the service your IP address and your default currency.</li>
+<li><strong>Receipt scanning is off by default.</strong> If you switch it on, the text recognition runs on your phone with <strong>Google ML Kit</strong>. Your photo and the text read from it are not uploaded, but ML Kit sends Google technical metrics that cannot be switched off while scanning is on (section 4).</li>
+<li>Reminders and alerts are <strong>local notifications</strong> made by your phone. No push-notification service is used.</li>
+</ul>
+
+<h2>3. What the app handles on your device</h2>
+<table>
+<tr><th>Data</th><th>Where it is stored</th><th>Leaves your device?</th></tr>
+<tr><td>Expenses: amount, currency, date, category, merchant, note, how it was entered (manual / scan / recurring)</td><td>Encrypted SQLite database (SQLCipher) in the app's private storage. The random database key is kept in the Android Keystore through expo-secure-store</td><td>No</td></tr>
+<tr><td>Categories, budgets, recurring expenses, your list of tracked subscriptions</td><td>Same encrypted database</td><td>No</td></tr>
+<tr><td>Settings and app state: default currency, language, theme, onboarding status, streak counter, dismissed insight cards, notification preferences, whether you saw the privacy notice, whether receipt scanning is on</td><td>Encrypted database / app storage on your device</td><td>No</td></tr>
+<tr><td>Cached exchange rates and the time of the last update</td><td>Encrypted database</td><td>No</td></tr>
+<tr><td>Receipt photo you take or pick for scanning</td><td>The photo picker puts a temporary copy in the app's cache; the app deletes that copy right after text recognition and keeps no copy. A photo you picked from your gallery stays where it was</td><td>No (see the ML Kit metrics in section 4)</td></tr>
+<tr><td>Text read from a receipt (amount, date, merchant)</td><td>Shown in the expense form for you to confirm; saved only if you save the expense</td><td>No</td></tr>
+<tr><td>App-lock PIN and the counter of failed attempts</td><td>Android Keystore through expo-secure-store</td><td>No</td></tr>
+<tr><td>Fingerprint / face data (if you turn on biometric unlock)</td><td>Never accessed by the app. The operating system checks it and tells the app only "success" or "failure"</td><td>No</td></tr>
+<tr><td>Scheduled local notifications (budget alerts, reminders, free-trial-end reminders)</td><td>Scheduled by your device. No push token is requested</td><td>No</td></tr>
+<tr><td>Free-trial status on this device: the date your 7-day trial started and a high-water mark of the device clock (to detect a clock set back)</td><td>expo-secure-store (Android Keystore). "Delete all data" does not remove it, so that the trial cannot be restarted by erasing data; uninstalling does</td><td>No. The app only reads it</td></tr>
+<tr><td>Subscription status on this device: status, period dates, the time of the last check, and the purchase token that Google Play gave the app</td><td>expo-secure-store (Android Keystore). "Delete all data" does not remove it, so that a paying subscriber is not locked out; uninstalling does</td><td>No. The app only reads it</td></tr>
+<tr><td>Root signal: whether the device looks rooted. If it does, the offline grace period is shortened (see the Terms). The result is not stored or sent</td><td>Computed on the device</td><td>No</td></tr>
+<tr><td>Backups you export (JSON, CSV)</td><td>A file you create and send yourself through the Android share sheet</td><td>Only where <strong>you</strong> send it</td></tr>
+</table>
+<p>Android's automatic app backup is switched off for Kuruvo, so the database is not copied into your Google account backup.</p>
+
+<h2>4. Data that leaves your device, and who receives it</h2>
+<table>
+<tr><th>Recipient</th><th>Country</th><th>What is sent</th><th>When and why</th><th>Their role</th><th>More information</th></tr>
+<tr><td><strong>Google</strong> (Google Play and Google Play Billing)</td><td>Worldwide (Google)</td><td>Payment, order and Google-account data that <strong>you</strong> give Google when you subscribe. The app never sees your card or payment details. The app only asks the Play Store app <strong>on your phone</strong> which purchases your account holds and checks Google's signature on the answer</td><td>When you subscribe, restore, or when the app checks your subscription. To process the subscription, renewals, cancellations and refunds. The free trial is not handled by Google</td><td>Independent controller under Google's own terms. Not our processor</td><td><a href="https://policies.google.com/privacy">Google Privacy Policy</a>, <a href="https://play.google.com/about/play-terms/">Google Play Terms</a></td></tr>
+<tr><td><strong>Frankfurter</strong> (open-source exchange-rate service, host <code>api.frankfurter.dev</code>, which runs behind Cloudflare)</td><td>Hosted by the project and a content-delivery provider; location not stated</td><td>An HTTPS request whose address contains your <strong>default currency</strong> (as the base) and a list of other currency codes, for example <code>base=USD&amp;symbols=EUR,GBP,...</code>. Like any internet request it shows your <strong>IP address</strong> to the server. No expense, account or other personal data is in it</td><td><strong>Only after you have seen the privacy notice on the first screen.</strong> Then automatically when the app opens and the stored rates are older than 24 hours, when you change your default currency, and when you press "update rates" (at most once every 15 minutes). To convert amounts between currencies; the app keeps working offline with the last stored rates</td><td>Independent service; we have no contract with it. According to its public FAQ it does not collect or log personal data, IP addresses or request URLs</td><td><a href="https://frankfurter.dev">frankfurter.dev</a></td></tr>
+<tr><td><strong>Google ML Kit</strong> (text recognition, <code>@react-native-ml-kit/text-recognition</code>)</td><td>Worldwide (Google)</td><td><strong>Only if you switch receipt scanning on.</strong> The recognition runs on your phone with a model bundled in the app: your images and the text read from them are <strong>not</strong> sent to Google. According to Google, ML Kit sends Google technical metrics over HTTPS: device manufacturer, model and OS version, app package name and version, performance metrics such as latency, API configuration, input and output size, event types, error codes, and a per-installation identifier. <strong>These metrics cannot be switched off while scanning is on</strong>; turning scanning off in Settings stops the app from calling ML Kit</td><td>When you use receipt scanning. Google uses the metrics to measure, debug, maintain and improve the ML Kit APIs and to detect misuse</td><td>Google decides the purpose. We have no data processing agreement with Google for these metrics, and we do not claim a transfer safeguard for them (section 6). Google states that it does not pass these metrics to third parties</td><td><a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit data disclosure</a>, <a href="https://developers.google.com/ml-kit/terms">ML Kit terms</a></td></tr>
+<tr><td><strong>GitHub Pages</strong> (hosts this policy and the Terms)</td><td>United States (GitHub, Inc.)</td><td>When you open the policy or Terms link, your browser requests the page, which shows GitHub your IP address and browser details. The app itself sends nothing</td><td>Only when you tap a legal link</td><td>Independent service</td><td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a></td></tr>
+<tr><td><strong>Our e-mail provider</strong> (Google LLC, Gmail)</td><td>United States</td><td>The message you write to us, your e-mail address and anything you put in it</td><td>Only if you write to <strong>tembrisstudio@gmail.com</strong>. To answer you</td><td>Service provider for us. We do not claim a transfer safeguard for the mailbox provider if it is outside your country (section 6)</td><td>The provider's privacy policy</td></tr>
+</table>
+<p>What we receive as the developer: <strong>Google Play Console</strong> shows us data about orders: for example the order number, product, time and state of the order, price and tax, and the buyer's country. Play Console may show other buyer details such as an e-mail address. Google, not the app, makes this data available to us. The app sends us nothing.</p>
+<p>We do <strong>not</strong> sell your data, do <strong>not</strong> share it for advertising, and use no advertising, analytics or crash-reporting SDK. The app does not probe the internet to test your connection; it only reads the connection state that Android reports. Where you send an exported backup (for example to cloud storage or an e-mail app), that recipient handles it under its own terms; we have no access to it.</p>
+
+<h2>5. Why we use data and on what legal basis (GDPR Art. 6)</h2>
+<table>
+<tr><th>Purpose</th><th>Data</th><th>Legal basis</th></tr>
+<tr><td>Core functions (tracking, budgets, scanning, insights)</td><td>Data in section 3</td><td>Not processed by us: it stays on your device and we never receive it</td></tr>
+<tr><td>Check, restore and enforce your free trial, your subscription and the read-only mode on your device</td><td>Trial start date and clock record (they stay on the device); purchase status that the Play Store gives the app on your phone</td><td>Performance of a contract with you, Art. 6(1)(b). We receive no data from these checks</td></tr>
+<tr><td>Administer subscriptions we are paid for: order records, support, chargebacks and fraud</td><td>Order data in Play Console</td><td>Performance of a contract, Art. 6(1)(b); our legitimate interest in handling disputes and misuse, Art. 6(1)(f)</td></tr>
+<tr><td>Keep tax and accounting records of sales</td><td>Order data</td><td>Legal obligation, Art. 6(1)(c)</td></tr>
+<tr><td>Convert currencies</td><td>Currency request, IP address (Frankfurter)</td><td>Performance of a contract with you, Art. 6(1)(b): the feature you use needs the rates</td></tr>
+<tr><td>Receipt scanning with the metrics that Google's component sends</td><td>The metrics in section 4</td><td>Your choice to switch scanning on after reading the information sheet, which we treat as your consent, Art. 6(1)(a) (and, where it applies, Art. 5(3) of the ePrivacy Directive). You withdraw it by switching scanning off in Settings. Withdrawal does not make earlier use unlawful</td></tr>
+<tr><td>Answer your messages and requests</td><td>Your e-mail and message</td><td>Legitimate interest, Art. 6(1)(f), and performance of a contract, Art. 6(1)(b)</td></tr>
+</table>
+<p>You are not required to give us any data. If you do not switch receipt scanning on, ML Kit is not called. The app requests exchange rates on its own after the privacy notice; there is no switch for this in this version, but you can enter rates manually and the app works offline with the last stored rates. Local notifications use the notification permission of your device, which you can withdraw in Android settings at any time.</p>
+<p><strong>Automated decisions.</strong> The read-only mode follows the trial and subscription status mechanically (the trial ends after 7 days by the clock stored on the device). Nothing is profiled and no decision with legal effect is made about you.</p>
+
+<h2>6. Transfers outside your country</h2>
+<p>Google operates worldwide. Frankfurter and its content-delivery provider and GitHub may process data outside the European Economic Area, the United Kingdom or Turkey. For EEA and UK users, this means that your IP address and, with receipt scanning on, the ML Kit metrics may reach countries without an EU adequacy decision for the recipient. We do not sign standard contractual clauses with Google for ML Kit metrics or with Frankfurter, and we do not claim a specific transfer tool for them. The providers describe their own safeguards in their own policies (links in section 4).</p>
+<p>For users in Turkey: there is no adequacy decision under Article 9 of Law No. 6698 (as of 29 October 2026 the Personal Data Protection Board had not made one), and we claim no Article 9 transfer tool for the ML Kit metrics, the exchange-rate request, GitHub Pages or the mailbox provider. We reduced these flows instead: ML Kit is used only after you switch scanning on, and the exchange-rate request carries no expense data. Your choice to switch scanning on is not used as a legal ground for these transfers under Turkish law. You can ask us for details at <strong>tembrisstudio@gmail.com</strong>.</p>
+
+<h2>7. How long data is kept</h2>
+<ul>
+<li><strong>Data on your device:</strong> until you delete it in the app, clear the app's storage, or uninstall the app. We cannot recover it, because we never receive it. The temporary copy of a receipt photo is deleted right after text recognition. "Delete all data" in Settings erases the database content, settings, the PIN, scheduled notifications and temporary export and import files, and the app also removes leftover temporary files when it starts.</li>
+<li><strong>Free-trial status on your device (start date, clock record):</strong> kept until you uninstall the app. "Delete all data" keeps it (section 3), so that the trial cannot be restarted by erasing data.</li>
+<li><strong>Subscription status on your device:</strong> replaced on each check. "Delete all data" keeps it (section 3); uninstalling the app removes it.</li>
+<li><strong>Google (Play, Play Billing, ML Kit):</strong> under Google's own policies.</li>
+<li><strong>Frankfurter and its content-delivery provider:</strong> we receive and keep nothing from this request. How long the provider keeps technical logs is not stated by it.</li>
+<li><strong>Order data we see in Play Console:</strong> Google keeps it under its policies. A copy that we keep for our accounts is kept for the period that tax and accounting law requires.</li>
+<li><strong>E-mails to us:</strong> until your request is resolved and for 12 months afterwards, then deleted. A short log of requests (date, kind of request, outcome; no message content) is kept for 3 years to show that we answered.</li>
+</ul>
+
+<h2>8. Deleting your data and exercising your rights</h2>
+<ul>
+<li><strong>Data in the app:</strong> open the app and delete expenses, categories and budgets, use <strong>Settings &gt; Delete all data</strong>, or uninstall the app. Uninstalling removes everything the app stored on the device; "Delete all data" removes everything you created and keeps only the trial and subscription status records. Files you exported are outside our reach: delete them yourself.</li>
+<li><strong>Google data (Play, ML Kit):</strong> manage it through your Google account or Google's privacy tools. To stop the ML Kit metrics, switch receipt scanning off in Settings.</li>
+<li><strong>Order data we hold:</strong> write to <strong>tembrisstudio@gmail.com</strong> with the subject "Privacy request". Please include the Google Play order number from your receipt e-mail so we can find your order. Deleting records does not cancel your subscription; cancel in Google Play (see the Terms). Some order data we must keep for tax and accounting law.</li>
+<li><strong>Exchange-rate service and GitHub:</strong> we hold no data from these requests. Contact them directly.</li>
+</ul>
+
+<h2>9. Your rights</h2>
+<p>Depending on where you live (for example under the EU/UK GDPR, Turkish KVKK Law No. 6698 or California law) you may have the right to: be informed; access your data; correct it; delete it; restrict or object to processing; receive your data in a portable format; and withdraw consent where processing is consent-based. The app lets you export all your data yourself as a JSON backup, which works even in read-only mode.</p>
+<p>Because the data in the app never reaches us, you exercise most of these rights directly in the app. For anything we hold (order data and your e-mails), write to <strong>tembrisstudio@gmail.com</strong>. We will respond within the time required by applicable law (one month under the GDPR, extendable where the law allows). You also have the right to complain to your data-protection authority (in the EU, your national supervisory authority; in Turkey, the Personal Data Protection Authority, KVKK).</p>
+<p><strong>California:</strong> we do not sell or share personal information as those terms are defined in the CCPA/CPRA, and we do not use it for targeted advertising.</p>
+
+<h2>10. Children</h2>
+<p>Kuruvo is intended for adults aged 18 and over and is not directed at children, and we do not knowingly collect their data. If you believe a child has provided us data, contact <strong>tembrisstudio@gmail.com</strong> and we will delete it.</p>
+
+<h2>11. Security</h2>
+<p>Your data is kept in an encrypted database in the app's private storage. The database key is random, is created on your device and is kept in the Android Keystore. Android's sandboxing protects the app's storage from other apps. The optional app lock protects access to the app screens; while it is on, Android is told to block screenshots and screen recording and to blank the app preview in the recent-apps list. Notifications are set to hide their content on a locked screen. Network requests use HTTPS. The app checks Google's signature on each purchase before it grants premium. No system is perfectly secure, and you are responsible for protecting your device and any backup files you create.</p>
+<p>If we learn of a personal data breach that concerns data we hold, we will notify the authorities and you as the law requires.</p>
+
+<h2>12. Permissions the app may ask for</h2>
+<ul>
+<li><strong>Camera:</strong> only when you choose to scan a receipt and have switched scanning on. Photos are read on your device and not uploaded. Picking a photo from your gallery uses the system photo picker and needs no storage permission.</li>
+<li><strong>Notifications:</strong> only to show local reminders and alerts you enable.</li>
+<li><strong>Biometrics / device lock:</strong> only for the optional app lock.</li>
+<li><strong>Internet:</strong> for the exchange-rate request and for Google Play.</li>
+<li><strong>Run at start-up and vibration:</strong> to reschedule your reminders after a restart and to give haptic feedback.</li>
+<li>The app asks for no access to your microphone, location, contacts, files or advertising ID.</li>
+</ul>
+
+<h2>13. Changes</h2>
+<p>We may update this policy. The effective date above shows the current version. The latest version is always available at the address where you are reading this. We will update section 4 before a release that adds a new recipient of your data.</p>
+
+<h2>14. Contact</h2>
+<p><strong>Oğulcan Özkan</strong> · <strong>tembrisstudio@gmail.com</strong></p>
+</body>
+</html>
